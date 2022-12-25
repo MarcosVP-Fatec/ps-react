@@ -1,3 +1,15 @@
+# Processo Seletivo Java
+
+## Candidato
+- **Marcos Vinicio Pereira**
+
+## Abrir pelo GitPod
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/MarcosVP-Fatec/ps-react) 
+
+## Versão do NodeJs
+- **V18.12.1**
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
