@@ -16,7 +16,14 @@ form input{
 
 form input[type='button']{
   margin-top: 10px;
-  margin-right: 10px;
+  margin-bottom: 10px;
+  float: right;
+}
+
+.table {
+  width: 500px;
+  margin-top: 10px;
+  margin-left: 50px;
 }
 
 table, th, td {

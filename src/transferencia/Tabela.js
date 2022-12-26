@@ -3,7 +3,7 @@ function Tabela({listaDeTransferencias}){
         <table className='table'>
             <thead>
                 <tr text-align='left'>
-                    <th colSpan={3}>Saldo Total:</th>
+                    <th colSpan={2}>Saldo Total:</th>
                     <th colSpan={2}>Saldo No Per&iacute;odo:</th>
                 </tr> 
                 <tr>
@@ -11,7 +11,6 @@ function Tabela({listaDeTransferencias}){
                     <th><b>Valentia</b></th>
                     <th><b>Tipo</b></th>
                     <th><b>Nome operador transacionado</b></th>
-                    <th><b>Op&ccedil;&atilde;o</b></th>
                 </tr>
             </thead>
             <tbody>
@@ -24,7 +23,6 @@ function Tabela({listaDeTransferencias}){
                             <td>{obj.valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL', minimumFractionDigits: 2})}</td>
                             <td>{obj.tipo}</td>
                             <td>{obj.nomeOperadorTransacao?obj.nomeOperadorTransacao:obj.conta.nomeResponsavel}</td>
-                            <td><button className="btn btn-success">Selecionar</button></td>
                         </tr>
                     ))
                 }
