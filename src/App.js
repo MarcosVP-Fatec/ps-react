@@ -29,6 +29,9 @@ function App() {
   // Realiza a presquisa
   const submitPesquisar = (dataInicio, dataFim, nomeOperadorTransferencia) => {
     let link = "http://localhost:8080/banco/transferencia/listar";
+    let lin2 = "http://localhost:8080/banco/transferencia/saldo";
+    let saldoTotal = 0;
+    let saldoPeriodo = 0
     if ( dataInicio && !dataFim){
       dataFim = dataInicio;
     }
@@ -38,14 +41,23 @@ function App() {
 
     if (dataInicio && nomeOperadorTransferencia){
       link += "?dIni="+trataData(dataInicio)+" 00:00:00&dFim="+trataData(dataFim)+" 23:59:59&nomeOperadorTransacao="+nomeOperadorTransferencia;
+      
     } else if (dataInicio){
       link += "?dIni="+trataData(dataInicio)+" 00:00:00&dFim="+trataData(dataFim)+" 23:59:59";
+
     } else if (nomeOperadorTransferencia){
       link += "?nomeOperadorTransacao="+nomeOperadorTransferencia;
+      lin2 += "?nomeOperadorTransacao="+nomeOperadorTransferencia;
     }
+
     fetch(link)
     .then(ret=>ret.json())
     .then(ret_convertido=>setTransferencias(ret_convertido));
+
+    //Falta separar os saldos
+    setSaldoPeriodo(0);
+    setSaldoTotal(0);
+
   }
 
   // UseEffect
@@ -69,7 +81,7 @@ function App() {
   return (
     <div>
       <Formulario eventoTeclado={atualizaCampos} btnPesquisar={metodoPesquisar} />
-      <Tabela listaDeTransferencias={transferencias} />
+      <Tabela listaDeTransferencias={transferencias} saldoT={saldoTotal} saldoP={saldoPeriodo}/>
     </div>
   );
 }

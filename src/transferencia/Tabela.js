@@ -1,10 +1,10 @@
-function Tabela({listaDeTransferencias}){
+function Tabela({listaDeTransferencias, saldoT, saldoP}){
     return(
         <table className='table'>
             <thead>
                 <tr text-align='left'>
-                    <th colSpan={2}>Saldo Total:</th>
-                    <th colSpan={2}>Saldo No Per&iacute;odo:</th>
+                    <th colSpan={2}>Saldo Total: {saldoT.toLocaleString('pt-br', {style: 'currency', currency: 'BRL', minimumFractionDigits: 2})}</th>
+                    <th colSpan={2}>Saldo No Per&iacute;odo: {saldoP.toLocaleString('pt-br', {style: 'currency', currency: 'BRL', minimumFractionDigits: 2})}</th>
                 </tr> 
                 <tr>
                     <th><b>Dados</b></th>
