@@ -15,6 +15,8 @@ function App() {
   // UseState
   const [transferencias, setTransferencias] = useState([]);
   const [objPesquisa, setObjPesquisa] = useState(pesquisaCampos);
+  const [saldoTotal, setSaldoTotal] = useState(0);
+  const [saldoPeriodo, setSaldoPeriodo] = useState(0);
 
   const trataData = (data) => {
     if (data){
